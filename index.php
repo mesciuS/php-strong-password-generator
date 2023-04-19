@@ -1,5 +1,7 @@
 <?php
 include './partials/functions.php';
+session_start();
+$_SESSION['psw'] = $password = random_password($_GET['password']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,11 +29,8 @@ Invece di visualizzare la password nella index, effettuare un redirect ad una pa
 <form action="" method="GET">
     <input type="number" name="password" placeholder="Di quanti caratteri la vuoi la password?">
     <button type="submit">Genera</button>
+    <a href="password.php">Visualizza la tua nuova password</a>
 </form>
-<div>
-    <p>Ecco la tua password generata randomicamente:</p>
-    <?php echo $password = random_password($_GET['password']); ?>
-</div>
 
 </body>
 </html>
